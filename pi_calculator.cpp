@@ -11,3 +11,9 @@ double calculate_partial_sum(int start, int end, int num_intervals) {
     }
     return sum;
 }
+
+double calculate_pi(int num_intervals, int num_threads) {
+    std::vector<std::thread> threads;
+    std::vector<double> partial_sums(num_threads, 0.0);
+    int intervals_per_thread = num_intervals / num_threads;
+}
