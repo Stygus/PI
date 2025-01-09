@@ -29,5 +29,10 @@ double calculate_pi(int num_intervals, int num_threads) {
         thread.join();
     }
 
- 
+    double pi = 0.0;
+    for (const auto& sum : partial_sums) {
+        pi += sum;
+    }
+
+    return pi / num_intervals;
 }
