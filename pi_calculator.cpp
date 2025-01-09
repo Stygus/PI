@@ -24,4 +24,10 @@ double calculate_pi(int num_intervals, int num_threads) {
             partial_sums[i] = calculate_partial_sum(start, end, num_intervals);
         });
     }
+
+    for (auto& thread : threads) {
+        thread.join();
+    }
+
+ 
 }
